@@ -17,16 +17,17 @@
 ?> 
 <html>
 	<head>
-		<title>Gantter UI Extension Example</title>
+		<title>Zarządzanie zależnościami - Gannter.com</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	</head>
 	
 	<body>
-		<h1>Gantter UI Extension Example</h1>
+		<h1>Zarządzanie zależnościami - Gannter.com</h1>
 		
-		Your email address is: <b><?php echo $_POST["email"] ?></b> <br/>
-		You were working in the <b><?php echo $_POST["currentWorkspace"] ?> workspace</b> <br/>
-		The project title is: <b><?php echo $title ?></b> <br/>
-		These rows were selected: <b><?php echo $_POST["selectedItems"] ?></b> <br/>
+		Adres email to: <b><?php echo $_POST["email"] ?></b> <br/>
+		Pracujesz w przestrzeni <b><?php echo $_POST["currentWorkspace"] ?> </b> <br/>
+		Nazwa projektu: <b><?php echo $title ?></b> <br/>
+		Wybranie wiersze: <b><?php echo $_POST["selectedItems"] ?></b> <br/>
 	
 	</body>
 </html>

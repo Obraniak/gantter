@@ -1,9 +1,9 @@
 {
-	'name': 'Popup Example',
-	'postURL': 'http://www.gantter.com/extensions/popup.php',
-	'authorName': 'InQuest',
-	'moreInfoURL': 'https://github.com/gantter/gantter-extension-samples/',
+	'name': 'Zarządzanie zależnościami',
+	'postURL': 'http://obraniak.eu/gantt/popup.php',
+	'authorName': 'Marcin Burgknap & Paweł Obraniak',
+	'moreInfoURL': 'https://github.com/obraniak/gantter-extension-samples/',
 	'type': 'Popup',
-	'iconURL': 'http://www.gantter.com/extensions/popup.png',
+	'iconURL': 'http://obraniak.eu/gantt/popup.png',
 	'private': true
 }
