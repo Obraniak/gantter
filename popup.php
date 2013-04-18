@@ -1,6 +1,6 @@
 <?php 
 /*
- * Sample Gantter Extension
+ * Gantter Extension for dependency management
  * Reads post variables and displays values
  */
 	$projectXML = simplexml_load_string($_POST["projectXML"]);
@@ -13,6 +13,10 @@
 	$title = $result[0]->Name;
 
 	header('Content-type: text/html');
+	
+	// Popup Extensions can send data back to Gantter.com by creating a HTML form and setting the action to: https://app.gantter.com/UpdateXML.aspx. 
+	// In the form, have one form variable named "projectXML" and set the value of this variable to the newly updated XML. 
+	// Upon submit, the form popup browser window (or tab depending on browser) will close and Gantter.com will update.
 
 ?> 
 <html>
@@ -24,9 +28,9 @@
 	<body>
 		<h1>Zarządzanie zależnościami - Gannter.com</h1>
 		
-		Adres email to: <b><?php echo $_POST["email"] ?></b> <br/>
-		Pracujesz w przestrzeni <b><?php echo $_POST["currentWorkspace"] ?> </b> <br/>
 		Nazwa projektu: <b><?php echo $title ?></b> <br/>
+        Adres email to: <b><?php echo $_POST["email"] ?></b> <br/>
+		Pracujesz w przestrzeni <b><?php echo $_POST["currentWorkspace"] ?> </b> <br/>
 		Wybranie wiersze: <b><?php echo $_POST["selectedItems"] ?></b> <br/>
 	
 	</body>
