@@ -1,0 +1,9 @@
+{
+	'name': 'Dev Zarządzanie zależnościami',
+	'postURL': 'http://obraniak.eu/gantter/dev/plugin/popup.php',
+	'authorName': 'Marcin Burgknap & Paweł Obraniak',
+	'moreInfoURL': 'https://github.com/obraniak/gantter/',
+	'type': 'Popup',
+	'iconURL': 'http://obraniak.eu/gantter/dev/plugin/popup.png',
+	'private': true
+}

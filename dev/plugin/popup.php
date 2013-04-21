@@ -33,5 +33,8 @@
 		Pracujesz w przestrzeni <b><?php echo $_POST["currentWorkspace"] ?> </b> <br/>
 		Wybranie wiersze: <b><?php echo $_POST["selectedItems"] ?></b> <br/>
 	
+	<footer>
+		<a href="/index.html" title="Plugin Homepage"> <img src="/popup.png"></a>
+	</footer>
 	</body>
 </html>

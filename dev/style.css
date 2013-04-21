@@ -1,0 +1,24 @@
+/*
+ style.css
+ <project>
+
+ Created by Marcin on 2013-04-21.
+ Copyright 2013 Marcin. All rights reserved.
+ */
+
+body {
+	background-color: #FFFFCC;
+}
+
+header {
+	background-color: #66CCFF;
+}
+
+footer {
+	background-color: #66CCFF;
+	text-align: center;
+}
+
+.content {
+	background-color: #CCFF99;
+}
