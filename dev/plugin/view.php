@@ -2,8 +2,8 @@
 
 /*
  * Gantter Extension for dependency management
- * Reads post variables and displays values
- */
+* Reads post variables and displays values
+*/
 $projectXML = simplexml_load_string($_POST["projectXML"]);
 
 $sxe = new SimpleXMLElement($projectXML -> asXML());
@@ -24,40 +24,44 @@ header('Content-type: text/html');
 // Upon submit, the form popup browser window (or tab depending on browser) will close and Gantter.com will update.
 ?>
 <html>
-	<head>
-		<title>Zarządzanie zależnościami - Gannter.com</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		
-		<link rel="stylesheet" type="text/css" href="style.css" />
-		
-		<script type="text/javascript" src="lib/jquery-1.9.1.min.js">
+<head>
+<title>Zarz�dzanie zale�no�ciami - Gannter.com</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<link rel="stylesheet" type="text/css" href="style.css" />
+
+<script type="text/javascript" src="lib/jquery-1.9.1.min.js">
 			$(document).ready(function() {
 
 			});
 
-		</script>          
- <script type="text/javascript"></script>    
-	</head>
-	<body>
-		
-		<header>
-			<h1>Zarządzanie zależnościami - Gannter.com</h1>
-		</header>
-	
-		
-		Nazwa projektu: <b><?php echo $title ?></b> <br/>
-		Adres email to: <b><?php echo $_POST["email"] ?></b> <br/>
-		Pracujesz w przestrzeni <b><?php echo $_POST["currentWorkspace"] ?> </b> <br/>
-		Wybranie wiersze: <b><?php echo $_POST["selectedItems"] ?></b> <br/>
+		</script>
+<script type="text/javascript"></script>
+</head>
+<body>
 
-		<div>
-			
-		</div>
+	<header>
+		<h1>Zarządzanie zależnościami - Gannter.com</h1>
+	</header>
 
 
-		<footer>
-			<button onclick="window.location.href='../index.html';" >Plugin HomePage</button>
-			<button onclick="window.close();">Gantter HomePage</button>
-		</footer>
-	</body>
+	Nazwa projektu:
+	<b><?php echo $title ?> </b>
+	<br /> Adres email to:
+	<b><?php echo $_POST["email"] ?> </b>
+	<br /> Pracujesz w przestrzeni
+	<b><?php echo $_POST["currentWorkspace"] ?> </b>
+	<br /> Wybranie wiersze:
+	<b><?php echo $_POST["selectedItems"]  ?> </b>
+	<br />
+
+	<div></div>
+
+
+	<footer>
+		<button onclick="window.location.href='../index.html';">Plugin
+			HomePage</button>
+		<button onclick="window.close();">Gantter HomePage</button>
+	</footer>
+</body>
 </html>
