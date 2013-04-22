@@ -1,0 +1,13 @@
+Struktura projektu:
+
+
+[dev]
+-Strona internetowa rozszerzenia z plikami css
+-plik projektu Aptana
+
+[dev/images]
+-Obrazki do strony projektu
+
+
+[dev/plugin]
+-Kod Ÿród³owy rozszerzenia

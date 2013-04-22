@@ -1,0 +1,155 @@
+/*
+ Main stylesheet
+ gantter.css
+ Copyright 2013 Paweł Obraniak. All rights reserved.
+ */
+body {
+	background-color: #373737;
+	font-family:      Arial, sans-serif;
+	font-size:        small;
+	margin:           0px;
+}
+
+#wrapper {
+	width: 737px;
+	background-color: white;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#header {
+  background-color: white;
+  margin:           0px;
+  height:           186px;
+}
+#menubar {
+	height:			21px;
+	background-image: url(images/tlo_paska.gif);
+	background-repeat:repeat-x;
+	line-height:1;
+	text-align:left;
+	padding-top:  10px;
+	padding-bottom:	5px;
+}
+
+#sidebar {
+	background-color: #FFFFFF;
+	border:			  1px solid #cccccc;
+	padding:          15px;
+	margin:           10px 10px 10px 468px;
+	width:            227px;
+}
+
+#footer {
+	background-color: #5c94cc;
+	color:            #FFFFFF;
+	text-align:       center;
+	padding:          10px;
+	margin:           0px;
+	font-size:        80%;
+	clear:            both;
+}
+
+
+/*Menubar style*/
+#menubar ul {
+	list-style-type: none;
+	margin:0;
+	padding:0;
+}
+#menubar li {
+	display:inline;
+	margin:0px;
+	margin-left:20px;
+	padding:0px;
+	padding-left:10px;
+}
+#menubar li a {
+	color:#666666;
+	text-decoration:none;
+	border:none;
+	font-weight:bold;
+	font-size:90%;
+}
+#menubar li a:hover {
+	color:#0CF;
+}
+
+#main_content {
+  background-color: white;
+  text-align:		justify;
+  padding:          15px;
+  margin:           0px 10px 10px 10px;
+  width: 410px;
+  float: left;
+}
+
+#main_content_full {
+  background-color: white;
+  text-align:		justify;
+  padding:          15px;
+  margin:           0px 30px 10px 10px;
+}
+
+
+
+
+
+h1 {
+	font-size:        130%;
+	color:            #5c94cc;
+}
+h2 {
+	font-size:        110%;
+	color:            #5c94cc;
+}
+
+
+li {
+	list-style-image:	url(images/strzalka.gif);
+	padding-top:	5px;
+	margin-left:	10px;
+}
+/*-----style odnosnikow-----*/
+a:link {
+	color:            #03C;
+	text-decoration:  none;
+	border-bottom:    thin dotted #03C;
+}
+a:visited {
+	color:            #5c94cc;
+	text-decoration:  none;
+	border-bottom:    thin dotted #5c94cc;
+}
+#sidebar a:link {
+	border:none;
+}
+#menubar a:link         {
+	font:bold 11px Verdana, sans-serif;
+	color:#666666;
+	text-decoration:none;
+	border:none;
+}
+#menubar a:visited      {
+	font:bold 11px Verdana, sans-serif;
+	color:#666666;
+	text-decoration:none;
+	border:none;
+}
+#menubar a:hover        {
+	font:bold 11px Verdana, sans-serif;
+	color:#000000;
+	text-decoration:none;
+	border:none;
+}
+#menubar a:active       {
+	font:bold 11px Verdana, sans-serif;
+	color:#666666;
+	text-decoration:none;
+	border:none;
+}
+#footer a {
+	text-decoration:	none;
+	border:				none;
+	color:				#FFFFFF;
+}
