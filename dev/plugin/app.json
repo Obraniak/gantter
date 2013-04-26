@@ -1,9 +1,9 @@
 {
-	'name': 'Dev Zarzπdzanie zaleønoúciami v2',
+	'name': 'Dev Zarzadzanie zaleøno∂úciami v2',
 	'postURL': 'http://obraniak.eu/gantter/dev/plugin/view.php',
-	'authorName': 'Marcin Burgknap & Pawe≈Ç Obraniak',
+	'authorName': 'Marcin Burgknap & Pawe≥ Obraniak',
 	'moreInfoURL': 'https://github.com/obraniak/gantter/',
 	'type': 'popup',
-	'iconURL': 'http://obraniak.eu/gantter/dev/plugin/image/favicon.png',
+	'iconURL': 'http://obraniak.eu/gantter/dev/plugin/img/favicon.png',
 	'private': true
 }

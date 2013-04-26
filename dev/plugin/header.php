@@ -1,3 +1,3 @@
 <header>
-	<h1>Zarz¹dzanie zale¿noœciami - Gannter.com</h1>
+	<h1>Zarz±dzanie zale¿no¶›ciami - Gannter.com</h1>
 </header>
