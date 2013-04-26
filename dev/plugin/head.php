@@ -17,8 +17,6 @@
 	<script type="text/javascript">
 		$(document).ready(function() {
 
-			alert("Test");
-
 			load();
 			download_items();
 		});
