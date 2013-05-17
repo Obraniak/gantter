@@ -3,8 +3,8 @@
  */
 function download_items() {
 
-	var jqxhr = $.get("http://obraniak.eu/gantter/dev/plugin/api.php?method=load_project", add_items, "json").fail(function() {
-		alert("Error http://obraniak.eu/gantter/dev/plugin/api.php?method=load_project");
+	var jqxhr = $.get("http://obraniak.eu/gantter/dev/plugin/api/api.php?method=load_project", add_items, "json").fail(function() {
+		alert("Error http://obraniak.eu/gantter/dev/plugin/api/api.php?method=load_project");
 	});
 }
 

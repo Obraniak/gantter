@@ -2,15 +2,15 @@ Nazwa projektu: <b><?php echo $GLOBALS["title"]
 ?></b>
 <br/>
 Adres email to:
-<b><?php echo $_POST["email"]
+<b><?php echo $GLOBALS["email"]
 ?></b>
 <br />
 Pracujesz w przestrzeni
-<b><?php echo $_POST["currentWorkspace"]
+<b><?php echo $GLOBALS["currentWorkspace"]
 ?></b>
 <br />
 Wybranie wiersze:
-<b><?php echo $_POST["selectedItems"]
+<b><?php echo $GLOBALS["selectedItems"]
 ?></b>
 <br />
 <div id="items"  style="width: 1000px;height: 400px; background-color:yellow; " >
