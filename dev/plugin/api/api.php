@@ -1,5 +1,7 @@
 <?php
-
+if ($_REQUEST['method'] == 'info') {
+	echo " Gantter server api class";
+}
 if ($_REQUEST['method'] == 'save_project') {
 	save_project();
 }

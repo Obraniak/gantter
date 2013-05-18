@@ -24,11 +24,19 @@ function load_project() {
 
 		$GLOBALS['file'] = 'projekt.xml';
 
+		$GLOBALS['email'] = $_POST["email"];
+
+		if (isset($_POST["currentWorkspace"])) {
+			$GLOBALS['currentWorkspace'] = $_POST["currentWorkspace"];
+		}
+
+		$GLOBALS['selectedItems'] = $_POST["selectedItems"];
+
 		file_put_contents($GLOBALS['file'], $GLOBALS['projectXML']);
 
 	} else {
 		$projectXML = null;
-		//simplexml_load_string(file_get_contents(dirname(__FILE__) . '/project_test.xml'));
+		simplexml_load_string(file_get_contents(dirname(__FILE__) . '/project_test.xml'));
 
 		$GLOBALS['email'] = 'test@test';
 		$GLOBALS['currentWorkspace'] = 'test';

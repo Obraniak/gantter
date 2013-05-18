@@ -1,5 +1,5 @@
 <?php
-//require_once 'control/controller.php';
+require_once 'control/controller.php';
 
-//init_page();
+init_page();
 ?>
