@@ -3,11 +3,20 @@
  */
 
 var App = undefined;
+var isLocal = true;
 
 function OnAppReady() {
 	App = new AppController();
 	App.downloadItems();
 	App.view.loadDemo();
+}
+
+function getUrl(subUrl) {
+
+	if (!isLocal) {
+		return 'http://obraniak.eu/gantter/dev/' + subUrl;
+	}
+	return 'http://localhost/plugin/' + subUrl;
 }
 
 function AppController() {
@@ -17,16 +26,19 @@ function AppController() {
 
 AppController.prototype.downloadItems = function() {
 
-	var jqxhr = $.get("http://obraniak.eu/gantter/dev/plugin/api/api.php?method=load_project", onLoadSuccess).fail(function() {
-		onLoadError();
+	$.ajax({
+		url : getUrl('plugin/api/api.php?method=load_project'),
+		type : 'GET',
+		success : onDownloadSuccess,
+		error : onDownloadError
 	});
 
 }
-function onLoadError() {
-	alert("Error occured durnning load items from server");
+function onDownloadError(data) {
+	alert("Error occured durnning load items from server" + data);
 }
 
-function onLoadSuccess(data) {
+function onDownloadSuccess(data) {
 
 	App.model.setItems(data);
 

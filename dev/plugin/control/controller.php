@@ -1,23 +1,14 @@
 <?php
+$base_dir = dirname(dirname(__FILE__));
 
-require_once (dirname(dirname(__FILE__)) . "/model/global_data.php");
+require_once ($base_dir . "/model/project_model.php");
+require_once ($base_dir . "/view/view_main.php");
 
-function init_page() {
+function setup_page() {
 
 	load_project();
-	
-	echo "<!DOCTYPE html>\n";
-	echo "<html>";
-	include ("view/head.php");
-	echo "<body>";
-	include ("view/header.php");
-	echo "<div align=\"center\" class=\".content\">";
-	include ("view/content.php");
-	echo "</div>";
-	include ("view/footer.php");
-	echo "</body>";
-	echo "</html>";
 
+	create_page();
 }
 ?>
 

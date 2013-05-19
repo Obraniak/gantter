@@ -28,16 +28,30 @@ AppModel.prototype.setItems = function(data) {
 
 	var tmp = jsonDecode(data);
 
-	for (var i = 0; i < tmp.length; i++) {
-		this.items.push(tmp[i]);
-	}
+	if (tmp == null) {
+		for (var i = 0; i < data.length; i++) {
+			this.items.push(data[i]);
+		}
 
+	} else {
+		for (var i = 0; i < tmp.length; i++) {
+			this.items.push(tmp[i]);
+		}
+	}
 }
 function jsonDecode(data) {
-	return JSON.parse(data);
+	try {
+		return JSON.parse(data);
+	} catch(err) {
+		return null;
+	}
 }
 
 function jsonEncode(data) {
-	return JSON.stringify(data);
+	try {
+		return JSON.stringify(data);
+	} catch(err) {
+		return null;
+	}
 }
 
