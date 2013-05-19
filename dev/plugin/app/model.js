@@ -3,41 +3,56 @@
  */
 
 function TaskItem() {
-	this.rect = {
-		'x' : 0,
-		y : 0,
-		width : 0,
-		height : 0
-	};
-	this.name = new String();
-	this.position = new String();
-	this.avatar = 'img/bart.jpg';
-	this.attrs = {
-		fill : new String(),
-		stroke : new String()
-	}
+	this.x = Number(0);
+	this.y = Number(0);
+	this.width = Number(0);
+	this.height = Number(0);
+	this.name = "";
+	this.position = "";
+	this.avatar = "";
+	this.fill = "0";
+	this.stroke = "ll";
 }
 
 function AppModel() {
-	this.items = undefined;
 }
 
+AppModel.prototype.data = {
+	items : []
+}
+
+AppModel.prototype.getItems = function() {
+	return this.data.items;
+}
 AppModel.prototype.setItems = function(data) {
 
-	this.items = new Array();
+	this.data.items = [];
 
-	var tmp = jsonDecode(data);
+	var tmpData = jsonDecode(data);
 
-	if (tmp == null) {
-		for (var i = 0; i < data.length; i++) {
-			this.items.push(data[i]);
+	if (tmpData == null) {
+
+		for (id in data) {
+
+			var tmp = new TaskItem();
+			var source = data[id];
+
+			tmp.x = Number(source.x);
+			tmp.y = Number(source.y);
+			tmp.width = Number(source.width);
+			tmp.height = Number(source.height);
+			tmp.name = String(source.name);
+			tmp.position = String(source.position);
+			tmp.avatar = String(source.avatar);
+			tmp.fill = String(source.fill);
+			tmp.stroke = String(source.stroke);
+
+			this.data.items[id] = tmp;
+
 		}
 
-	} else {
-		for (var i = 0; i < tmp.length; i++) {
-			this.items.push(tmp[i]);
-		}
 	}
+
 }
 function jsonDecode(data) {
 	try {

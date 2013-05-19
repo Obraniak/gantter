@@ -1,104 +1,60 @@
 <?php
-global $global_project_xml;
-global $global_title;
-global $global_file;
-global $global_email;
-global $global_current_workspace;
-global $global_selected_items;
 
-/////
-function get_global_project_xml() {
-	if (isset($GLOBALS['global_project_xml'])) {
-		return $GLOBALS['global_project_xml'];
+class session_data {
+	var $project_xml;
+	var $title;
+	var $email;
+	var $current_workspace;
+	var $selected_items;
+}
+
+global $session_current_data;
+
+function get_session_dir() {
+	return dirname(dirname(__FILE__)) . '\session';
+}
+
+function get_session_file() {
+	return get_session_dir() . '\session_global.json';
+}
+
+function set_session_data($data) {
+	$GLOBALS['session_current_data'] = $data;
+
+}
+
+function get_session_data() {
+	if (isset($GLOBALS['session_current_data'])) {
+		return $GLOBALS['session_current_data'];
 	}
 
-	echo "global_project_xml nor set";
+	echo "session_current_data nor set";
 
 	return $null;
 }
 
-function set_global_project_xml($data) {
-	$GLOBALS['global_project_xml'] = simplexml_load_string($data);
-}
+function start_server_session() {
 
-////
+	set_session_data(new session_data());
 
-function get_global_email() {
-	if (isset($GLOBALS['global_email'])) {
-		return $GLOBALS['global_email'];
+	if (!file_exists(get_session_dir())) {
+		mkdir(get_session_dir());
 	}
 
-	echo "global_email nor set";
+	save_server_session();
 
-	return $null;
 }
 
-function set_global_emial($data) {
-	$GLOBALS['global_email'] = $data;
+function save_server_session() {
+
+	file_put_contents(get_session_file(), json_encode(get_session_data()));
 }
 
-////
+function load_server_session() {
 
-function get_global_current_workspace() {
-	if (isset($GLOBALS['global_current_workspace'])) {
-		return $GLOBALS['global_current_workspace'];
-	}
+	$data = file_get_contents(get_session_file());
 
-	echo "global_current_workspace nor set";
+	set_session_data(json_decode($data));
 
-	return $null;
 }
-
-function set_global_current_workspace($data) {
-	$GLOBALS['global_current_workspace'] = $data;
-}
-
-///
-
-function get_global_file() {
-	if (isset($GLOBALS['global_file'])) {
-		return $GLOBALS['global_file'];
-	}
-
-	echo "global_file nor set";
-
-	return $null;
-}
-
-function set_global_file($data) {
-	$GLOBALS['global_file'] = $data;
-}
-
-/////
-
-function get_global_selected_items() {
-	if (isset($GLOBALS['global_selected_items'])) {
-		return $GLOBALS['global_selected_items'];
-	}
-
-	echo "global_selected_items nor set";
-
-	return $null;
-}
-
-function set_global_selected_items($data) {
-	$GLOBALS['global_selected_items'] = $data;
-}
-
-////
-
-function get_global_title() {
-	if (isset($GLOBALS['global_title'])) {
-		return $GLOBALS['global_title'];
-	}
-
-	echo "global_title nor set";
-
-	return $null;
-}
-
-function set_global_title($data) {
-	$GLOBALS['global_title'] = $data;
-}
-
 ?>

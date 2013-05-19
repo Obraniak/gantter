@@ -8,7 +8,14 @@ var isLocal = true;
 function OnAppReady() {
 	App = new AppController();
 	App.downloadItems();
-	App.view.loadDemo();
+
+	$('#btnUnjoin').click(onUnjoinItems);
+	$('#btnSave').click(onSaveChanges);
+
+	$('#btnJoinBeginEnd').click(onJoinBeginEnd);
+	$('#btnJoinBeginBegin').click(onJoinBeginBegin);
+	$('#btnJoinEndBegin').click(onJoinEndBegin);
+	$('#btnJoinEndEnd').click(onJoinEndEnd);
 }
 
 function getUrl(subUrl) {
@@ -42,5 +49,29 @@ function onDownloadSuccess(data) {
 
 	App.model.setItems(data);
 
-	App.view.showItems(App.model.items);
+	App.view.showItems(App.model.getItems());
+}
+
+function onJoinBeginEnd() {
+	alert("onJoinBeginEnd click");
+}
+
+function onJoinBeginBegin() {
+	alert("onJoinBeginBegin click");
+}
+
+function onJoinEndBegin() {
+	alert("onJoinEndBegin click");
+}
+
+function onJoinEndEnd() {
+	alert("onJoinEndEnd click");
+}
+
+function onUnjoinItems() {
+	alert("onUnjoinItems click");
+}
+
+function onSaveChanges() {
+	alert("onSaveChanges click");
 }

@@ -6,6 +6,8 @@ require_once ($base_dir . "/view/view_main.php");
 
 function setup_page() {
 
+	start_server_session();
+
 	load_project();
 
 	create_page();
