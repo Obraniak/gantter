@@ -1,15 +1,20 @@
 <header>
-	<h1>Zarz±dzanie zale¿no¶›ciami - Gannter.com</h1>
-	<div>
-		<button id="btnUnjoin" >
-			Unjoin
-		</button>
-		<button  id="btnSave" >
-			Save
-		</button>
+	<div id="headerbg">
+	<div id="banner" >
+	    <div id="menubar1">
+        <button  id="btnSave" >Zapisz</button>
+        </div>
+	</div>   
+   
+	    
 	</div>
-	</br>
-	<div>
+	
+
+
+	<div id="menubar2">
+	    <button id="btnUnjoin" >
+            Unjoin
+        </button>
 		<button id="btnJoinBeginEnd" >
 			Join Begin -> End
 		</button>

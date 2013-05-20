@@ -1,0 +1,9 @@
+{
+	'name': 'Dev Zarzadzanie zale¿no¶œciami v2',
+	'postURL': 'http://localhost/gantter/dev/plugin/index.php',
+	'authorName': 'Marcin Burgknap & Pawe³ Obraniak',
+	'moreInfoURL': 'https://github.com/obraniak/gantter/',
+	'type': 'popup',
+	'iconURL': 'http://localhost/gantter/dev/plugin/img/favicon.png',
+	'private': true
+}

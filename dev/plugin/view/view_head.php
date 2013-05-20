@@ -1,7 +1,7 @@
 <head>
 	<META HTTP-EQUIV="content-type" CONTENT="text/html; charset=iso-8859-2">
 
-	<title>Zarządzanie zależnościami - Gannter.com</title>
+	<title>Gantter Dependency Manager v1.0</title>
 
 	<link type="text/css" href="css/style.css" rel="stylesheet"/>
 	<link type="text/css" href="css/ui-lightness/jquery-ui-1.10.2.custom.css" rel="stylesheet">
