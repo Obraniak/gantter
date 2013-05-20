@@ -12,20 +12,13 @@
 
 
 	<div id="menubar2">
-	    <button id="btnUnjoin" >
-            Unjoin
-        </button>
-		<button id="btnJoinBeginEnd" >
-			Join Begin -> End
-		</button>
-		<button id="btnJoinBeginBegin" >
-			Join Begin -> Begin
-		</button>
-		<button  id="btnJoinEndBegin" >
-			Join End -> Begin
-		</button>
-		<button  id="btnJoinEndEnd" >
-			Join End -> End
-		</button>
+	    <ul>
+	        <li><a href="#" id="btnUnjoin">Unjoin</a></li>
+	        <li><a href="#" id="btnJoinBeginEnd">Join Begin -> End</a></li>
+	        <li><a href="#" id="btnJoinBeginBegin">Join Begin -> Begin</a></li>
+	        <li><a href="#" id="btnJoinEndBegin">Join End -> Begin</a></li>
+	        <li><a href="#" id="btnJoinEndEnd">Join End -> End</a></li>
+	    </ul>
+
 	</div>
 </header>
