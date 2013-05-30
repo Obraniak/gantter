@@ -1,7 +1,7 @@
 {
 	'name': 'Gantter dependency manager',
 	'postURL': 'http://localhost/plugin/plugin/index.php',
-	'authorName': 'Marcin Burgknap & Pawe³ Obraniak',
+	'authorName': 'Marcin Burgknap & Pawel Obraniak',
 	'moreInfoURL': 'https://github.com/obraniak/gantter/',
 	'type': 'popup',
 	'iconURL': 'http://localhost/plugin/plugin/img/favicon.png',

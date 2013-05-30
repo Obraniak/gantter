@@ -8,7 +8,6 @@ call_user_func($_REQUEST['method' ]);
 
 	function base_dir() {
 	return dirname(dirname(__FILE__));
-	;
 	}
 
 	function load_project() {
@@ -40,7 +39,7 @@ call_user_func($_REQUEST['method' ]);
 						  'name' => $sxe -> Tasks -> Task[$i] -> Name." " , 
 						  'position' => $sxe -> Tasks -> Task[$i] -> Priority." ", 
 						  'avatar' => (base_dir(). "/img/favicon.png"),
-						  'fill' => "#e4d8a4", 
+						  'fill' => "#fff", 
 						  'stroke' => "gray");
 										  
 				
