@@ -1,5 +1,11 @@
 <header>
 	<div id="headerbg">
+	<div id="topbar">
+		<ul>
+		<li><a href="#" onclick="window.location.href='../index.html';">Plugin HomePage</a></li>
+		<li><a href="#"  onclick="window.close();">Gantter HomePage</a></li>
+		</ul>
+	</div>
 	<div id="banner" >
 	    <div id="menubar1">
         <button  id="btnSave" >Zapisz</button>

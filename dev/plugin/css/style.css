@@ -3,7 +3,7 @@
  <project>
 
  Created by Marcin on 2013-04-21.
- Copyright 2013 Marcin. All rights reserved.
+ Modified by Pawe³
  */
 body {
 	background-color: #d2e5f6;
@@ -27,6 +27,7 @@ background-color: #fff;
 footer {
 	background-color: #eee;
 	text-align: center;
+	padding: 5px 0;
 }
 
 .content {
@@ -108,4 +109,39 @@ header h1 {
 
 #menubar2 ul a:hover {
     background-color: #eee;
+}
+
+#topbar {
+	background-color: #000;
+	height: 25px;
+}
+#topbar  ul, #topbar  ul li {
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#topbar  ul {
+    float: left;
+
+    padding-left: 20px;
+}
+
+#topbar  ul li {
+    float: left;
+    margin-right: 10px;
+}
+
+#topbar  ul a:link, #topbar ul a:visited {
+    text-decoration: none;
+	font-weight:bold;
+    display: block;
+    color: #fff;
+    padding: 5px 10px;
+}
+
+#topbar  ul a:hover {
+    color: grey;
+
 }

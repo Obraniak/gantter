@@ -1,8 +1,3 @@
 <footer>
-	<button onclick="window.location.href='../index.html';">
-		Plugin HomePage
-	</button>
-	<button onclick="window.close();">
-		Gantter HomePage
-	</button>
+<p>Zwinne metodyki wytwarzania oprogramowania - Marcin Burgknap & Pawe³ Obraniak</p>
 </footer>
