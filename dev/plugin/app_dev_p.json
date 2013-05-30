@@ -1,5 +1,5 @@
 {
-	'name': 'Dev Zarzadzanie zale¿no¶œciami v2',
+	'name': 'Gantter dependency manager',
 	'postURL': 'http://localhost/gantter/dev/plugin/index.php',
 	'authorName': 'Marcin Burgknap & Pawe³ Obraniak',
 	'moreInfoURL': 'https://github.com/obraniak/gantter/',
