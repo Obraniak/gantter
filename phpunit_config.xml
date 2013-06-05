@@ -7,16 +7,8 @@
 
     <testsuites>
         <testsuite name="Hello World Test Suite">
-            <directory>./dev/tests/</directory>
+            <directory>./dev/tests/*Test.php files</directory>
+   	    <file>./dev/tests/BasicTest.php</file>
         </testsuite>
     </testsuites>
-
-    <filter>
-        <whitelist>
-            <directory>./</directory>
-            <exclude>
-                <directory>./dev/tests</directory>
-            </exclude>
-        </whitelist>
-    </filter>
 </phpunit>
