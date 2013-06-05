@@ -3,7 +3,13 @@
  */
 
 var App = undefined;
-var isLocal = true;
+var isLocal = false;
+
+var debug = function() {
+};
+if (window.console != undefined) {
+	debug = console.log;
+}
 
 function OnAppReady() {
 	App = new AppController();
@@ -16,6 +22,7 @@ function OnAppReady() {
 	$('#btnJoinBeginBegin').click(onJoinBeginBegin);
 	$('#btnJoinEndBegin').click(onJoinEndBegin);
 	$('#btnJoinEndEnd').click(onJoinEndEnd);
+	$('#btnClean').click(onClean);
 }
 
 function getUrl(subUrl) {
@@ -41,6 +48,30 @@ AppController.prototype.downloadItems = function() {
 	});
 
 }
+
+AppController.prototype.uploadItems = function() {
+
+	var upload_data = '{"changes":';
+	upload_data += (App.model.getChangesJson());
+	upload_data += '}';
+
+	$.ajax({
+		type : 'POST',
+		url : getUrl('plugin/api/api.php?method=upload_changes'),
+		data : upload_data,
+		success : onUploadSuccess,
+		error : onUploadError
+	});
+
+}
+function onUploadError(data) {
+	alert("Error occured durnning load items from server" + data);
+}
+
+function onUploadSuccess(data) {
+	alert("Zmiany przes³ane na server");
+}
+
 function onDownloadError(data) {
 	alert("Error occured durnning load items from server" + data);
 }
@@ -52,26 +83,52 @@ function onDownloadSuccess(data) {
 	App.view.showItems(App.model.getItems());
 }
 
+function onItemClick() {
+
+	if (App.model.beginItem == null) {
+		App.model.beginItem = this;
+	} else {
+		if (App.model.endItem == null) {
+			App.model.endItem = this;
+		}
+	}
+}
+
+function onClean() {
+	App.model.clean();
+}
+
 function onJoinBeginEnd() {
-	alert("onJoinBeginEnd click");
+	App.view.onJoinBeginEnd(App.model.beginItem, App.model.endItem);
+	App.model.onJoinBeginEnd();
+	App.model.clean();
 }
 
 function onJoinBeginBegin() {
-	alert("onJoinBeginBegin click");
+	App.view.onJoinBeginBegin(App.model.beginItem, App.model.endItem);
+	App.model.onJoinBeginBegin();
+	App.model.clean();
 }
 
 function onJoinEndBegin() {
-	alert("onJoinEndBegin click");
+	App.view.onJoinEndBegin(App.model.beginItem, App.model.endItem);
+	App.model.onJoinEndBegin();
+	App.model.clean();
 }
 
 function onJoinEndEnd() {
-	alert("onJoinEndEnd click");
+	App.view.onJoinEndEnd(App.model.beginItem, App.model.endItem);
+	App.model.onJoinEndEnd();
+	App.model.clean();
 }
 
 function onUnjoinItems() {
-	alert("onUnjoinItems click");
+	App.view.onUnjoinItems(App.model.beginItem, App.model.endItem);
+	App.model.onUnjoinItems();
+	App.model.clean();
 }
 
 function onSaveChanges() {
-	alert("onSaveChanges click");
+	App.uploadItems();
+	App.model.clean();
 }

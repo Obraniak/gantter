@@ -6,6 +6,36 @@ function AppView() {
 	this.org = Joint.dia.org;
 }
 
+AppView.prototype.onJoinBeginEnd = function(beginItem, endItem) {
+
+	beginItem.joint(endItem, this.org.arrow);
+
+}
+
+AppView.prototype.onJoinBeginBegin = function(beginItem, endItem) {
+
+	beginItem.joint(endItem, this.org.arrow);
+
+}
+
+AppView.prototype.onJoinEndBegin = function(beginItem, endItem) {
+
+	beginItem.joint(endItem, this.org.arrow);
+
+}
+
+AppView.prototype.onJoinEndEnd = function(beginItem, endItem) {
+
+	beginItem.joint(endItem, this.org.arrow);
+
+}
+
+AppView.prototype.onUnjoinItems = function(beginItem, endItem) {
+
+	beginItem.joint(endItem, this.org.arrow);
+
+}
+
 AppView.prototype.showItems = function(data) {
 
 	Joint.paper("items", 1200, 700);
@@ -30,9 +60,9 @@ AppView.prototype.showItems = function(data) {
 			}
 		});
 
-		item.wrapper["0"].raphael.click(function() {
-			alert("kilk");
-		});
+		item.wrapper["0"].id = id;
+
+		item.wrapper["0"].raphael.click(onItemClick);
 	}
 }
 // bart.joint(marge, this.org.arrow);

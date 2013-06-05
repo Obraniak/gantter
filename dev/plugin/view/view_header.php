@@ -24,6 +24,7 @@
 	        <li><a href="#" id="btnJoinBeginBegin">Join Begin -> Begin</a></li>
 	        <li><a href="#" id="btnJoinEndBegin">Join End -> Begin</a></li>
 	        <li><a href="#" id="btnJoinEndEnd">Join End -> End</a></li>
+	        <li><a href="#" id="btnClean">Clean</a></li>
 	    </ul>
 
 	</div>

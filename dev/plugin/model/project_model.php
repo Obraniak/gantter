@@ -4,6 +4,7 @@ require_once 'global_data.php';
 function load_project() {
 
 	if (isset($_POST["projectXML"])) {
+
 		get_session_data() -> project_xml = $_POST["projectXML"];
 
 		get_session_data() -> email = $_POST["email"];
@@ -11,6 +12,7 @@ function load_project() {
 		get_session_data() -> selected_items = $_POST["selectedItems"];
 
 	} else {
+
 		get_session_data() -> project_xml = file_get_contents(dirname(__FILE__) . '\project_test.xml');
 
 		get_session_data() -> email = 'test@test';
@@ -19,6 +21,7 @@ function load_project() {
 
 	}
 
+	
 	$xml = simplexml_load_string(get_session_data() -> project_xml);
 
 	$sxe = new SimpleXMLElement($xml -> asXML());
