@@ -69,7 +69,7 @@ function onUploadError(data) {
 }
 
 function onUploadSuccess(data) {
-	alert("Zmiany przes³ane na server");
+	$('#projectXML').val(data);
 }
 
 function onDownloadError(data) {
@@ -87,9 +87,11 @@ function onItemClick() {
 
 	if (App.model.beginItem == null) {
 		App.model.beginItem = this;
+		debug(App.model.beginItem["0"].id)
 	} else {
 		if (App.model.endItem == null) {
 			App.model.endItem = this;
+			debug(App.model.endItem["0"].id)
 		}
 	}
 }

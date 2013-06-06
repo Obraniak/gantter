@@ -20,7 +20,7 @@ function get_session_file() {
 }
 
 function get_session_changes_file() {
-	return get_session_dir() . '/session_global_changes.json';
+	return get_session_dir() . '/session_global_changes.xml';
 }
 
 function set_session_data($data) {

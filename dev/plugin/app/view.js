@@ -60,11 +60,14 @@ AppView.prototype.showItems = function(data) {
 			}
 		});
 
-		item.wrapper["0"].id = id;
+
+		item.wrapper["0"].id = tmp.uid;
 
 		item.wrapper["0"].raphael.click(onItemClick);
 	}
 }
+
+
 // bart.joint(marge, this.org.arrow);
 // homer.joint(marge, this.org.arrow);
 // marge.joint(lisa, this.org.arrow);

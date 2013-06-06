@@ -60,54 +60,70 @@ function upload_changes() {
 
 		$sxe -> registerXPathNamespace('n', 'http://schemas.microsoft.com/project');
 
-		file_put_contents(get_session_changes_file(), 'data2');
-
 		$items = $data2 -> changes;
 
 		for ($i = 0; $i <= count($items) - 1; $i++) {
 
-			file_put_contents(get_session_changes_file(), 'data2.5' . $items[$i] -> leftId . " " . $items[$i] -> rightId);
-
 			$result = $sxe -> xpath('/n:Project/n:Tasks/n:Task[n:UID[text()="' . $items[$i] -> leftId . '"]]');
-			file_put_contents(get_session_changes_file(), 'data2.6' . $items[$i] -> leftId . " " . $items[$i] -> rightId);
+
 			$node = $result[0];
-			file_put_contents(get_session_changes_file(), 'data2.7' . $items[$i] -> leftId . " " . $items[$i] -> rightId);
+
 			$newNode = new SimpleXMLElement('<PredecessorLink></PredecessorLink>');
 			$newNode -> addChild('PredecessorUID', $items[$i] -> rightId . "");
 			$newNode -> addChild('Type', '1');
 			$newNode -> addChild('CrossProject', '0');
 			$newNode -> addChild('LinkLag', '0');
 			$newNode -> addChild('LagFormat', '7');
-			file_put_contents(get_session_changes_file(), 'data2.8' . $items[$i] -> leftId . " " . $items[$i] -> rightId);
+
 			simplexml_insert_before($newNode, $node -> IsPublished);
-			file_put_contents(get_session_changes_file(), 'data2.9' . $items[$i] -> leftId . " " . $items[$i] -> rightId);
+
 		}
-		file_put_contents(get_session_changes_file(), 'data3');
+
 		get_session_data() -> project_xml = $sxe -> asXml();
 
 		file_put_contents(get_session_changes_file(),  get_session_data() -> project_xml);
 
-		//		save_server_session();
+		save_server_session();
 
-		//save_project();
+		echo get_session_data() -> project_xml;
 	}
 }
 
 function save_project() {
 
-	$xml =                    get_session_data() -> project_xml;
+	$xml = file_get_contents(get_session_changes_file());
+	do_post_request('https://app.gantter.com/UpdateXML.aspx', array('projectXML' => $xml));
+
+	// $ch = curl_init();
+	// curl_setopt($ch, CURLOPT_URL, 'https://app.gantter.com/UpdateXML.aspx');
+	// curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	// curl_setopt($ch, CURLOPT_POST, true);
+	//
+	// $data = array('projectXML' => $xml . '');
+	//
+	// curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+	// $output = curl_exec($ch);
+	// $info = curl_getinfo($ch);
+	// var_dump($info);
+	// curl_close($ch);
+}
+
+function do_post_request($url, $fields, $optional_headers = null) {
+	// http_build_query is preferred but doesn't seem to work!
+	// $fields_string = http_build_query($fields, '', '&', PHP_QUERY_RFC3986);
+
+	// Create URL parameter string
+	foreach ($fields as $key => $value)
+		$fields_string .= $key . '=' . $value . '&';
+	$fields_string = rtrim($fields_string, '&');
 
 	$ch = curl_init();
-	curl_setopt($ch, CURLOPT_URL, 'https://app.gantter.com/UpdateXML.aspx');
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-	curl_setopt($ch, CURLOPT_POST, true);
+	curl_setopt($ch, CURLOPT_URL, $url);
+	curl_setopt($ch, CURLOPT_POST, count($fields));
+	curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_string);
 
-	$data = array('projectXML' => $xml . '');
+	$result = curl_exec($ch);
 
-	curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-	$output = curl_exec($ch);
-	$info = curl_getinfo($ch);
-	//var_dump($info);
 	curl_close($ch);
 }
 
