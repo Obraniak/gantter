@@ -7,7 +7,7 @@ function create_page() {
 	include ("view_head.php");
 	echo "<body>";
 	include ("view_header.php");
-	echo "<div align=\"center\" class=\"content\">";
+	echo "<div class=\"content\">";
 	include ("view_content.php");
 	echo "</div>";
 	include ("view_footer.php");

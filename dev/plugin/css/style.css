@@ -3,10 +3,10 @@
  <project>
 
  Created by Marcin on 2013-04-21.
- Modified by Pawe³
+ Modified by Pawel
  */
 body {
-	background-color: #d2e5f6;
+	background-color: #fff;
 	margin:0 0 0 0;
 	font-family: Arial,Verdana,Helvetica,sans-serif;
 	font-size: 75%;
@@ -145,4 +145,53 @@ header h1 {
 #topbar  ul a:hover {
     color: grey;
 
+}
+
+#metric {
+	border: 1px solid black;
+	margin: 5px;
+	border-collapse:collapse;
+}
+#metric td, #metric th {
+	padding: 5px;
+	border:1px solid black;
+}
+#metric th {
+	background-color:#069;
+	color:#fff;
+	text-align:left;
+
+}
+
+#items {
+	border: 1px solid  #999;
+	background-color:#E8E8E8;
+}
+
+a.aTooltip {
+	position:relative;
+}
+
+a.aTooltip span {
+	display:none;
+}
+
+a.aTooltip:hover span {
+		position:absolute;
+		display:block;
+		bottom:-140px; 
+		left:10px;
+		width:250px;
+		height:120px;
+		background:#DDF4FF;
+		color:#333;
+		border: 1px solid #093;
+		padding:5px;
+}
+a.aTooltip:hover span.tsmall {
+		height:40px;
+		bottom:-60px; 
+}
+a.aTooltip:hover span img {
+	padding:5px;
 }

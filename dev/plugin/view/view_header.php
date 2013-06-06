@@ -27,22 +27,22 @@
 	<div id="menubar2">
 		<ul>
 			<li>
-				<a href="#" id="btnUnjoin">Unjoin</a>
+				<a href="#" id="btnUnjoin" class="aTooltip">Usun zaleznosc<span class="tsmall">Usuwa relacje zaleznosci pomiedzy wybranymi zadaniami</span></a>
 			</li>
 			<li>
-				<a href="#" id="btnJoinBeginEnd">Join Begin -> End</a>
+				<a href="#" id="btnJoinBeginEnd" class="aTooltip">Rozpoczecie-Zakonczenie <span><strong>Relacja Rozpoczecie-Zakonczenie (RZ)</strong> <br />Zaleznosc ta oznacza, ze w chwili rozpoczecia zadania poprzednika, powinno nastapic zakonczenie prac w nastepniku.<br /> <img src="http://obraniak.eu/gantter/dev/plugin/img/rz.png"/></span></a>
 			</li>
 			<li>
-				<a href="#" id="btnJoinBeginBegin">Join Begin -> Begin</a>
+				<a href="#" id="btnJoinBeginBegin" class="aTooltip">Rozpoczecie-Rozpoczecie<span><strong>Relacja Rozpoczecie-Rozpoczecie (RR)</strong> <br />Zaleznosc ta oznacza, ze zadanie nastepnika moze sie rozpoczac w momencie rozpoczecia zadania poprzednika.<br /> <img src="http://obraniak.eu/gantter/dev/plugin/img/rr.png"/></span></a>
 			</li>
 			<li>
-				<a href="#" id="btnJoinEndBegin">Join End -> Begin</a>
+				<a href="#" id="btnJoinEndBegin" class="aTooltip">Zakonczenie-Rozpoczecie<span><strong>Relacja Zakonczenie-Rozpoczecie (ZR)</strong> <br />Zaleznosc ta oznacza, ze zadanie nastepnika moze rozpoczac sie gdy zakonczy sie zadanie poprzednika.<br /> <img src="http://obraniak.eu/gantter/dev/plugin/img/zr.png"/></span></a>
 			</li>
 			<li>
-				<a href="#" id="btnJoinEndEnd">Join End -> End</a>
+				<a href="#" id="btnJoinEndEnd" class="aTooltip">Zakonczenie-Zakonczenie<span><strong>Relacja Zakonczenie-Zakonczenie (ZZ)</strong> <br />Zaleznosc ta oznacza, ze w chwili zakonczenia zadania poprzednika, nastepuje zakonczenie prac w nastepniku.<br /> <img src="http://obraniak.eu/gantter/dev/plugin/img/zz.png"/></span></a>
 			</li>
 			<li>
-				<a href="#" id="btnClean">Clean</a>
+				<a href="#" id="btnClean" class="aTooltip">Wyczysc wszystkie zaleznosci<span class="tsmall">Usuwa wszystkie zaleznosci w projekcie.</span></a>
 			</li>
 		</ul>
 
